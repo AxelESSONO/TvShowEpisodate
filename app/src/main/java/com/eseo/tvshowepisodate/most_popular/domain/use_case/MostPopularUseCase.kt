@@ -1,6 +1,7 @@
 package com.eseo.tvshowepisodate.most_popular.domain.use_case
 
 import com.eseo.tvshowepisodate.most_popular.data.remote.dto.toTvShow
+import com.eseo.tvshowepisodate.most_popular.data.remote.dto.toTvShowResponse
 import com.eseo.tvshowepisodate.most_popular.domain.model.TvShow
 import com.eseo.tvshowepisodate.most_popular.domain.repository.TvShowRepository
 import com.eseo.tvshowepisodate.most_popular.util.Resource
@@ -18,8 +19,11 @@ class MostPopularUseCase @Inject constructor(
 
         try {
             emit(Resource.Loading<List<TvShow>>(isLoading = true))
-            val tvShows : List<TvShow> = repository.getTvShowResponse(page)
-                .tvShowDtos.map {
+            val tvShows : List<TvShow> = repository
+                .getTvShowResponse(page)
+                .toTvShowResponse()
+                .tvShows
+                .map {
                     it.toTvShow()
                 }
 
