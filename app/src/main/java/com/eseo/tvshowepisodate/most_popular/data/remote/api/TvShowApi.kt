@@ -1,12 +1,13 @@
 package com.eseo.tvshowepisodate.most_popular.data.remote.api
 
 import com.eseo.tvshowepisodate.most_popular.data.remote.dto.TvShowResponseDto
+import com.eseo.tvshowepisodate.most_popular.util.Constants
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface TvShowApi {
 
-    @GET("most-popular")
+    @GET(Constants.MOST_POPULAR_END_POINT)
     suspend fun getTvShowResponse(
         @Query("page")
         page: Int,

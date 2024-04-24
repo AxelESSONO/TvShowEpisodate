@@ -13,18 +13,18 @@ import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
-    //private var page: Int = 1
-    //private val mostPopularViewModel : MostPopularViewModel by viewModels()
+    private var page: Int = 1
+    private val mostPopularViewModel : MostPopularViewModel by viewModels()
 
-    private lateinit var recyclerTvShow : RecyclerView
-    private lateinit var mostPopularAdapter : MostPopularAdapter
+    //private lateinit var recyclerTvShow : RecyclerView
+    //private lateinit var mostPopularAdapter : MostPopularAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
 
-        setRecyclerView()
+        //setRecyclerView()
 
 
 
@@ -39,10 +39,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun setRecyclerView() {
+  /*  private fun setRecyclerView() {
         mostPopularAdapter = MostPopularAdapter()
         recyclerTvShow = findViewById(R.id.tvShowRecycler)
         recyclerTvShow.adapter = mostPopularAdapter
         recyclerTvShow.layoutManager = GridLayoutManager(applicationContext, 2)
-    }
+    }*/
 }

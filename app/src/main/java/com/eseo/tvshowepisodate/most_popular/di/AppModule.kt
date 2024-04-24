@@ -3,6 +3,7 @@ package com.eseo.tvshowepisodate.most_popular.di
 import com.eseo.tvshowepisodate.most_popular.data.remote.api.TvShowApi
 import com.eseo.tvshowepisodate.most_popular.data.remote.repository.TvShowRepositoryImpl
 import com.eseo.tvshowepisodate.most_popular.domain.repository.TvShowRepository
+import com.eseo.tvshowepisodate.most_popular.util.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -18,7 +19,7 @@ object AppModule {
     @Provides
     fun provideTvShowApi() : TvShowApi{
         return Retrofit.Builder()
-            .baseUrl("https://www.episodate.com/api/")
+            .baseUrl(Constants.BASE_URL)
             .build()
             .create(TvShowApi::class.java)
     }
